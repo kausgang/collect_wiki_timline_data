@@ -44,7 +44,7 @@ var section='&section=25';
 // var section='&section=28'; //150 records - works as last one has one record
 
 // ############################## CHANGE THIS ###########################
-var DESTINATION_FOLDER = "india";  //CHANGE THIS FOR OTHER COUNTRY
+var DESTINATION_FOLDER = "India";  //CHANGE THIS FOR OTHER COUNTRY
 // ######################################################################
 
 // CHECK IF FOLDER EXISTS..IF NOT CREATE IT
@@ -214,7 +214,7 @@ function create_json(data){
     //date = data[1]; //DISREGARDING DATE AS INCORPORATING IT WILL BE COMPLEX
     
 // ############################## CHANGE THIS ###########################
-    country = "india"; //CHANGE HERE FOR OTHER COUNTRY
+    country = "India"; //CHANGE HERE FOR OTHER COUNTRY
 // ######################################################################
     
     //create the initial object to hold data
@@ -222,7 +222,7 @@ function create_json(data){
     year: "" ,
     
 // ############################## CHANGE THIS ###########################
-    india: [] //CHANGE HERE FOR OTHER COUNTRIES
+    India: [] //CHANGE HERE FOR OTHER COUNTRIES
 // ######################################################################
     
     };
@@ -246,7 +246,7 @@ function create_json(data){
                 var event_details = decode(event[i]);
 
             // ############################## CHANGE THIS ###########################
-                obj.india.push(event_details); //CHANGE HERE FOR DIFFERNET COUNTRIES
+                obj.India.push(event_details); //CHANGE HERE FOR DIFFERNET COUNTRIES
             // #######################################################################
                 i++;
                
@@ -288,13 +288,13 @@ function create_json(data){
            //empty the event array for the next year
 
         // ############################## CHANGE THIS ###########################
-            obj.india = [];     //CHANGE HERE FOR DIFFERNET COUNTRIES
+            obj.India = [];     //CHANGE HERE FOR DIFFERNET COUNTRIES
         // ############################## CHANGE THIS ###########################
         
             var event_details = decode(event[i]);
 
         // ############################## CHANGE THIS ###########################    
-            obj.india.push(event_details);      //CHANGE HERE FOR DIFFERNET COUNTRIES     
+            obj.India.push(event_details);      //CHANGE HERE FOR DIFFERNET COUNTRIES     
         // ######################################################################
            
            
@@ -329,7 +329,7 @@ function create_json(data){
         obj.year = year[last_year];
 
     // ############################## CHANGE THIS ###########################
-        obj.india = [];
+        obj.India = [];
     // ######################################################################
 
         // console.log('undefined now');
@@ -343,7 +343,7 @@ function create_json(data){
             var event_details = decode(event[i]);
 
         // ############################## CHANGE THIS ###########################
-            obj.india.push(event_details);      //CHANGE HERE FOR DIFFERNET COUNTRIES     
+            obj.India.push(event_details);      //CHANGE HERE FOR DIFFERNET COUNTRIES     
         // ######################################################################   
            
             // console.log(obj.usa);

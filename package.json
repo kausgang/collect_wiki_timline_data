@@ -1,0 +1,23 @@
+{
+  "name": "collect_wiki_timline_data",
+  "version": "1.0.0",
+  "description": "Automate wikipedia timeline data collection process",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kausgang/collect_wiki_timline_data.git"
+  },
+  "author": "Kaustav Ganguli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kausgang/collect_wiki_timline_data/issues"
+  },
+  "homepage": "https://github.com/kausgang/collect_wiki_timline_data#readme",
+  "dependencies": {
+    "replace": "latest",
+    "request": "latest"
+  }
+}
