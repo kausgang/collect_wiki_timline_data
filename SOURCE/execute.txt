@@ -1,0 +1,6 @@
+call cd SCRIPT
+call npm install
+call cd ..
+call md DOWNLOADED_DATA
+call cd DOWNLOADED_DATA
+
