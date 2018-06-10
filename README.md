@@ -1,5 +1,6 @@
-# collect_wiki_timline_data
-Automate wikipedia timeline data collection process
+# Collect Wikipedia historical timline data for different countries
+
+Dynamically generate nodejs script for each country and each section of the wiki timeline page. Generate batch script to automate the download process.
 
 Collect historical timeline data from https://en.wikipedia.org/wiki/Category:Timelines_by_country
 
