@@ -1,5 +1,4 @@
 {
-    "geopolitical_change":"https://en.wikipedia.org/wiki/Timeline_of_historical_geopolitical_changes",
     "Afghanistan":"https://en.wikipedia.org/wiki/Timeline_of_Afghan_history",
     "Albania":"https://en.wikipedia.org/wiki/Timeline_of_Albanian_history",
     "Argentina":"https://en.wikipedia.org/wiki/Timeline_of_Argentine_history",
@@ -20,15 +19,11 @@
     "Colombia":"https://en.wikipedia.org/wiki/Timeline_of_Colombian_history",
     "Cuba":"https://en.wikipedia.org/wiki/Timeline_of_Cuban_history",
     "Cyprus":"https://en.wikipedia.org/wiki/Timeline_of_Cypriot_history",
-    "Netherland":"https://en.wikipedia.org/wiki/Canon_of_Dutch_History",
     "East_Timor": "https://en.wikipedia.org/wiki/Timeline_of_East_Timorese_history",
     "Estonia":"https://en.wikipedia.org/wiki/Timeline_of_Estonian_history",
-    "Fiji":"https://en.wikipedia.org/wiki/Timeline_of_Fijian_history",
     "France":"https://en.wikipedia.org/wiki/Timeline_of_French_history",
-    "Georgia":"https://en.wikipedia.org/wiki/Timeline_of_Georgian_(country)_history",
     "Germany":"https://en.wikipedia.org/wiki/Timeline_of_German_history",
     "Haiti":"https://en.wikipedia.org/wiki/Timeline_of_Haitian_history",
-    "Iceland":"https://en.wikipedia.org/wiki/Timeline_of_Icelandic_history",
     "India" : "https://en.wikipedia.org/wiki/Timeline_of_Indian_history",
     "Indinesia":"https://en.wikipedia.org/wiki/Timeline_of_Indonesian_history",
     "Ireland":"https://en.wikipedia.org/wiki/Timeline_of_Irish_history",
@@ -60,6 +55,5 @@
     "Tanzania":"https://en.wikipedia.org/wiki/Timeline_of_Tanzanian_history",
     "Tonga":"https://en.wikipedia.org/wiki/Timeline_of_Tongan_history",
     "Vietnam":"https://en.wikipedia.org/wiki/Timeline_of_Vietnamese_history",
-    "USA" : "https://en.wikipedia.org/wiki/Timeline_of_United_States_history",
-    "Yugoslovia": "https://en.wikipedia.org/wiki/Timeline_of_Yugoslavia"
+    "USA" : "https://en.wikipedia.org/wiki/Timeline_of_United_States_history"
 }

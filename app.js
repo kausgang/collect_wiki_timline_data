@@ -64,6 +64,15 @@ url.forEach(page_url=>{
 console.log(page_title);
 
 
+//copy package.json
+fs.copyFileSync(SOURCE_DIR+path.sep+'package.json',SCRIPT_DIR+path.sep+'package.json');
+//copy run file
+fs.copyFileSync(SOURCE_DIR+path.sep+'execute.txt','execute.bat');
+
+//enter initial new line after npm install
+fs.appendFileSync('execute.bat','\n');
+
+
 
 // //read the source code
 for(var i=0;i<country.length;i++){
@@ -71,79 +80,40 @@ for(var i=0;i<country.length;i++){
     console.log(country[i]);
     var current_country = country[i];
 
-    fs.copyFileSync(SOURCE_DIR+path.sep+'source_code.txt',SCRIPT_DIR+path.sep+current_country+'.txt')
+    fs.copyFileSync(SOURCE_DIR+path.sep+'source_code.txt',SCRIPT_DIR+path.sep+current_country+'.js')
     
     // https://stackoverflow.com/questions/14177087/replace-a-string-in-a-file-with-nodejs?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
         replace({ //replace all the country title.
         regex: "INSERT_COUNTRY_HERE",
         replacement: current_country,
-        paths: [SCRIPT_DIR+path.sep+current_country+'.txt'],
+        paths: [SCRIPT_DIR+path.sep+current_country+'.js'],
         recursive: true,
         silent: true,
     });
     replace({ //replace the page title.
         regex: "INSERT_PAGE_TITLE",
         replacement: page_title[i],
-        paths: [SCRIPT_DIR+path.sep+current_country+'.txt'],
+        paths: [SCRIPT_DIR+path.sep+current_country+'.js'],
         recursive: true,
         silent: true,
     });
 
     
+    fs.appendFileSync('execute.bat','call node ..'+path.sep+SCRIPT_DIR+path.sep+current_country+'.js'+'\n');
 
 
-    //get section
-    replace_section(page_title[i],SCRIPT_DIR+path.sep+current_country+'.txt') //send the page title & copied js file
-
-    
-    
-}
-
-
-//copy package.json
-fs.copyFileSync(SOURCE_DIR+path.sep+'package.json',SCRIPT_DIR+path.sep+'package.json');
-//copy run file
-fs.copyFileSync(SOURCE_DIR+path.sep+'execute.txt','execute.bat');
-
-
-function replace_section(page,file){
-
-    var request = require('request');
-
-    var url = 'https://en.wikipedia.org/w/api.php?&action=parse&format=json&page='+page;
-
-    request.get(url, function(err,resp_code,data) {
-    
-        data = JSON.parse(data);
-        // console.log(data);
-        var number_of_sections = data.parse.sections.length;
-        console.log(number_of_sections);
-
-        //enter initial new line after npm install
-        fs.appendFileSync('execute.bat','\n');
-        
-        //create all js files by changing section number
-        for(var i=number_of_sections;i>=1;i--){
-
-            
-            fs.copyFileSync(file,file+'_'+i+'.js'); //make a copy of the file
-            replace({ //replace the section_number.
-                regex: "INSERT_SECTION_NUMBER",
-                replacement: i,
-                paths: [file+'_'+i+'.js'],
-                recursive: true,
-                silent: true,
-            });
-
-            fs.appendFileSync('execute.bat','call node ..'+path.sep+file+'_'+i+'.js'+'\n');
-
-           
-        }
-    });
+    // //get section
+    // replace_section(page_title[i],SCRIPT_DIR+path.sep+current_country+'.txt') //send the page title & copied js file
 
     
     
 }
+
+
+
+
+
+
 
 
 
