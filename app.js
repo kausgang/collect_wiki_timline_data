@@ -1,13 +1,13 @@
 /* objective : dynamically generate nodejs code to automate wikipedia historical data download process 
             Refer : https://github.com/kausgang/wiki_timeline-array
 
-aource : https://en.wikipedia.org/wiki/Category:Timelines_by_country
+Source : https://en.wikipedia.org/wiki/Category:Timelines_by_country
 
 input : 
     1. wikipedia URL
     2. country name
 output :
-    1. in the same working directory, create <country>.js File for all the inputs country
+    1. Create SCRIPT directory. Inside it create <country>.js File for all the inputs country
     2. every js file should have proper code to download the section number (the highest section number) and country
     3. create a bat/sh file to change the section number (bring it to 0) and run node process with <country>.js as input
  */
