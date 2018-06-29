@@ -8,8 +8,9 @@ input :
     2. country name
 output :
     1. Create SCRIPT directory. Inside it create <country>.js File for all the inputs country
-    2. every js file should have proper code to download the section number (the highest section number) and country
-    3. create a bat/sh file to change the section number (bring it to 0) and run node process with <country>.js as input
+    2. every js file should have proper code to download the section number 
+    3. create a bat/sh file to run node process with <country>.js as input
+    4. Running the execute.bat file will download the data from wikipedia
  */
 
 //input data in this format in input.json
@@ -18,15 +19,20 @@ output :
     //     "USA" : "https://en.wikipedia.org/wiki/Timeline_of_United_States_history"
     // }
 
-var fs = require('fs');
 var replace = require("replace");
 var path = require('path');
-
+var fs = require('fs');
 
 var SCRIPT_DIR = 'SCRIPT';
 var SOURCE_DIR = 'SOURCE';
 
+// CHECK IF SCRIPT DIR EXISTS..IF NO THEN CREATE IT
+var exists = fs.existsSync(SCRIPT_DIR)
+if(!exists)
+    fs.mkdirSync(SCRIPT_DIR);
 
+
+// SOURCE THE INPUT FILE
 var input_stream = fs.readFileSync('input.json');
 var input = JSON.parse(input_stream);
 
@@ -44,8 +50,9 @@ Object.keys(input).forEach(function(key){
 
 });
 
-console.log(country);
-console.log(url);
+
+// console.log(country);
+// console.log(url);
 
 // extract page title
 var page_title = [];
@@ -61,7 +68,7 @@ url.forEach(page_url=>{
 
 });
 
-console.log(page_title);
+// console.log(page_title);
 
 
 //copy package.json
@@ -71,7 +78,6 @@ fs.copyFileSync(SOURCE_DIR+path.sep+'execute.txt','execute.bat');
 
 //enter initial new line after npm install
 fs.appendFileSync('execute.bat','\n');
-
 
 
 // //read the source code
@@ -99,14 +105,7 @@ for(var i=0;i<country.length;i++){
     });
 
     
-    fs.appendFileSync('execute.bat','call node ..'+path.sep+SCRIPT_DIR+path.sep+current_country+'.js'+'\n');
-
-
-    // //get section
-    // replace_section(page_title[i],SCRIPT_DIR+path.sep+current_country+'.txt') //send the page title & copied js file
-
-    
-    
+    fs.appendFileSync('execute.bat','call node ..'+path.sep+SCRIPT_DIR+path.sep+current_country+'.js'+'\n');    
 }
 
 
