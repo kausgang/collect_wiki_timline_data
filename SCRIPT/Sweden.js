@@ -2,7 +2,7 @@
 // all timelines
 // https://en.wikipedia.org/wiki/Category:Timelines_by_country
 
-//    take the last 500 year history of the below countries
+
 // india https://en.wikipedia.org/wiki/Timeline_of_Indian_history
 // USA https://en.wikipedia.org/wiki/Timeline_of_United_States_history
 // England https://en.wikipedia.org/wiki/Timeline_of_English_history
@@ -32,7 +32,7 @@ var api_main = 'https://en.wikipedia.org/w/api.php?';
 var action = '&action=parse&format=json';
 
 // ############################## CHANGE THIS ###############################################################
-var page="&page=INSERT_PAGE_TITLE";     
+var page="&page=Timeline_of_Swedish_history";     
                          
 //to know the section number, paste this in filefox and find the section  
 // https://en.wikipedia.org/w/api.php?&action=parse&format=json&page=Timeline_of_United_States_history
@@ -40,7 +40,7 @@ var page="&page=INSERT_PAGE_TITLE";
 
 
 // ############################## CHANGE THIS ###########################
-var DESTINATION_FOLDER = "INSERT_COUNTRY_HERE";  //CHANGE THIS FOR OTHER COUNTRY
+var DESTINATION_FOLDER = "Sweden";  //CHANGE THIS FOR OTHER COUNTRY
 // ######################################################################
 
 // CHECK IF FOLDER EXISTS..IF NOT CREATE IT
@@ -298,7 +298,7 @@ function validate(element){
 
 function write_file(year,event){
 
-    var filename = path.join(DESTINATION_FOLDER,year[0])+'.json'
+    var filename = path.join(DESTINATION_FOLDER,year[0].trim())+'.json'
     var obj = {};
     obj.year = year[0];
     obj[DESTINATION_FOLDER]=event;

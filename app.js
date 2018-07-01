@@ -74,7 +74,8 @@ url.forEach(page_url=>{
 //copy package.json
 fs.copyFileSync(SOURCE_DIR+path.sep+'package.json',SCRIPT_DIR+path.sep+'package.json');
 //copy run file
-fs.copyFileSync(SOURCE_DIR+path.sep+'execute.txt','execute.bat');
+// fs.copyFileSync(SOURCE_DIR+path.sep+'execute.txt','execute.bat');
+fs.copyFileSync(SOURCE_DIR+path.sep+'execute','execute.bat');
 
 //enter initial new line after npm install
 fs.appendFileSync('execute.bat','\n');
@@ -86,7 +87,8 @@ for(var i=0;i<country.length;i++){
     console.log(country[i]);
     var current_country = country[i];
 
-    fs.copyFileSync(SOURCE_DIR+path.sep+'source_code.txt',SCRIPT_DIR+path.sep+current_country+'.js')
+    // fs.copyFileSync(SOURCE_DIR+path.sep+'source_code.txt',SCRIPT_DIR+path.sep+current_country+'.js')
+    fs.copyFileSync(SOURCE_DIR+path.sep+'source_code',SCRIPT_DIR+path.sep+current_country+'.js')
     
     // https://stackoverflow.com/questions/14177087/replace-a-string-in-a-file-with-nodejs?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
         replace({ //replace all the country title.
