@@ -279,6 +279,12 @@ function validate(element){
         if(last == 'BCE'){
             element = '-'+element1.substring(0,element1.length - 3).trim(); //REMOVE THE TRAILING WHITESPACE
         }
+
+        // <br> INCLUDED FOR INDIA 1398
+        var last = element1.substring(element1.length - 4,element1.length) 
+        if(last == '<br>'){
+            element = '-'+element1.substring(0,element1.length - 4).trim(); //REMOVE THE TRAILING WHITESPACE
+        }
             
         // CHECK IF ELEMENT CAN BE CONVERTED TO A NUMBER
         if(!isNaN(parseInt(element))){
