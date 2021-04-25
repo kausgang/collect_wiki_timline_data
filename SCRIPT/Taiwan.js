@@ -32,7 +32,7 @@ var api_main = 'https://en.wikipedia.org/w/api.php?';
 var action = '&action=parse&format=json';
 
 // ############################## CHANGE THIS ###############################################################
-var page="&page=INSERT_PAGE_TITLE";     
+var page="&page=Timeline_of_Taiwanese_history";     
                          
 //to know the section number, paste this in filefox and find the section  
 // https://en.wikipedia.org/w/api.php?&action=parse&format=json&page=Timeline_of_United_States_history
@@ -40,7 +40,7 @@ var page="&page=INSERT_PAGE_TITLE";
 
 
 // ############################## CHANGE THIS ###########################
-var DESTINATION_FOLDER = "INSERT_COUNTRY_HERE";  //CHANGE THIS FOR OTHER COUNTRY
+var DESTINATION_FOLDER = "Taiwan";  //CHANGE THIS FOR OTHER COUNTRY
 // ######################################################################
 
 // CHECK IF FOLDER EXISTS..IF NOT CREATE IT
