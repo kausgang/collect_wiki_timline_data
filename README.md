@@ -24,6 +24,6 @@ execute.bat
 ### More info
 See https://github.com/kausgang/wiki_timeline-array for more information on downloading wikipedia historical timeline data
 
-See https://github.com/kausgang/collaborate_wiki_timeline to collaborate the individual country's data and make a master record.
+See https://github.com/kausgang/collate_wiki_timeline to collate the individual country's data and make a master record.
 
 
